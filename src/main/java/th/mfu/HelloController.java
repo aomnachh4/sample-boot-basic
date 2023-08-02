@@ -7,10 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @RequestMapping("/hello")
-    String hello() {
-        return "Hello World!";
+    @RequestMapping("/hi/{name}")
+    String hello(@PathVariable String name) {
+        return "Hello " + name;
     }
 
-   
+    @RequestMapping("/sum/{a}/{b}")
+    int sum(@PathVariable int a, @PathVariable int b) {
+        return a + b;
+    }
+
 }
